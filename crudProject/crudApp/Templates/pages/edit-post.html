@@ -1,0 +1,18 @@
+{% extends '../base.html' %}
+{% block title %} Изменить пост {% endblock %}
+
+{% block content %}
+<div class="card mb-3 shadow p-3 bg-body rounded border border-0">
+  <div class="card-body" >
+    <h2 display-6>Изменить пост</h2>
+    <form method="post">
+      {% csrf_token %}
+      <input value="{{ post.title }}" type="text" name="title" maxlength="255" class="textinput textInput form-control" required="" id="id_title">
+      <textarea name="content" cols="40" rows="10" class="textarea form-control" required="" id="id_content">
+        {{ post.content }}
+      </textarea>
+      <button class="mt-3 btn btn-dark">Изменить</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

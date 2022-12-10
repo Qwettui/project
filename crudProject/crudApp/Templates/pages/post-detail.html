@@ -1,0 +1,15 @@
+{% extends '../base.html' %}
+
+{% block title %} {{post.title}} {% endblock %}
+
+{% block content %}
+<div class="card text-bg-dark mb-3 border border-0">
+  <div class="card-header">{{ post.postDate }}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <p class="card-text">{{ post.content }}</p>
+    <a href="{% url 'editPost' pk=post.pk %}" class="btn btn-light">Изменить</a>
+    <a href="{% url 'postDelete' pk=post.pk %}" class="btn btn-danger">Удалить</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends '../base.html' %}
+{% block title %} Удалить пост {% endblock %}
+
+{% block content %}
+<div class="card mb-3 shadow p-3 bg-body rounded border border-0">
+  <div class="card-body" >
+    <h2 display-6>Удалить пост</h2>
+    <form method="post">
+      {% csrf_token %}
+      <button class=" btn btn-danger">Да</button>
+      <a href="{% url 'postDetail' pk=post.pk %}" class="btn btn-dark">Нет</a>
+    </form>
+  </div>
+</div>
+{% endblock %}
